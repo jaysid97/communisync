@@ -17,7 +17,7 @@ Once the data is structured, our smart matching engine instantly cross-reference
 ### 🔗 Submission Links
 *   **Prototype Link:** *[Insert Link to Live Streamlit MVP here]*
 *   **Project Deck:** *[Insert Link to Presentation Deck here]*
-*   **GitHub Repository:** *[Insert Link to GitHub Repo here]*
+*   **GitHub Repository:** [https://github.com/jaysid97/communisync](https://github.com/jaysid97/communisync)
 *   **Demo Video:** *[Insert Link to Demo Video here]*
 
 ---
