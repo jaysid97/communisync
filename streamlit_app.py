@@ -14,8 +14,17 @@ st.title("🤝 CommuniSync: Community Needs & Volunteer Matcher")
 st.markdown("Transform scattered, unstructured field reports into actionable volunteer matching using Agentic AI.")
 
 # Check for API Key
-if not os.environ.get("GEMINI_API_KEY"):
-    st.error("⚠️ GEMINI_API_KEY is missing. Please add it to your .env file to run the AI engine.")
+api_key = os.environ.get("GEMINI_API_KEY")
+if not api_key:
+    # Fallback to Streamlit secrets (useful for Streamlit Community Cloud)
+    try:
+        api_key = st.secrets["GEMINI_API_KEY"]
+        os.environ["GEMINI_API_KEY"] = api_key
+    except (KeyError, FileNotFoundError):
+        pass
+
+if not api_key:
+    st.error("⚠️ GEMINI_API_KEY is missing. Please add it to your `.env` file (local) or Streamlit Secrets (Cloud deployment).")
 
 # Mock Volunteer Database
 volunteers = pd.DataFrame([
